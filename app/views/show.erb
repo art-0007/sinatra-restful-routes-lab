@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+      
+  </head>
+  <body>
+      <% if @recipe %>
+      
+      <h4>Name:  <%= @recipe.name %></h4>
+      <h4>Ingredients:  <%= @recipe.ingredients %></h4>
+      <h4>Cook time:  <%= @recipe.cook_time %></h4>
+    <% else%>
+      <p><a href="/">Homepage</a></p>
+    <% end %>
+
+<form action="/recipes/<%= @recipe.id %>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+</form> 
+
+  </body>
+</html>
